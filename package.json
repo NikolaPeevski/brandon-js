@@ -1,0 +1,43 @@
+{
+  "name": "brandonjs",
+  "version": "0.0.1",
+  "description": "An ionic branding manager",
+  "main": "src/index.js",
+  "bin": {
+    "brandon": "src/index.js"
+  },
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "create": "npm run build && npm run test",
+    "build": "tsc -p .",
+    "test": "sudo npm i -g && brandon",
+    "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
+    "fiddle": "node ./lib/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolaPeevski/brandon-js.git"
+  },
+  "author": "NikolaPeevski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NikolaPeevski/brandon-js/issues"
+  },
+  "homepage": "https://github.com/NikolaPeevski/brandon-js#readme",
+  "dependencies": {
+    "@types/inquirer": "^6.5.0",
+    "chalk": "^4.0.0",
+    "clear": "^0.1.0",
+    "commander": "^5.1.0",
+    "esm": "^3.2.25",
+    "figlet": "^1.4.0",
+    "inquirer": "^7.1.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.4",
+    "nodemon": "^2.0.4",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
+  }
+}
