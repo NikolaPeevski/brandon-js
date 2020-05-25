@@ -122,3 +122,4 @@ temp/
 # End of https://www.gitignore.io/api/node,visualstudiocode
 
 ./package-lock.json
+./test/brands
