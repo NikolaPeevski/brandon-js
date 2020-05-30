@@ -1,6 +1,6 @@
 {
   "name": "brandonjs",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "An ionic branding manager",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
