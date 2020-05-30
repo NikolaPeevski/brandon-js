@@ -13,6 +13,8 @@ import { Actions } from './actions'
 
 let spinner = undefined;
 
+program.option('--brand <type>', '', undefined);
+
 clear();
 console.log(
   chalk.red(
@@ -67,8 +69,8 @@ const main = () =>
     inquirer
     .prompt(questions)
     .then((answer: any) => {
-        console.log(answer);
-        console.log('\n');
+        // console.log(answer);
+        // console.log('\n');
         if (answer.menu == 4) {
             actions.listBrands(false).then(res => {
             brandQuestion[0].choices = res;
@@ -99,5 +101,18 @@ const main = () =>
         }
     });
 
-main();
+function argHandler() {
+    program.parse(process.argv);
+    if (program.brand) {
+        actions.listBrands(false).then(brands => {
+            if (brands.indexOf(program.brand) > -1) {
+                actions.activateBrand(program.brand);
+            } else {
+                console.log('No such brand!');
+            }
+        })
+    } else main();
+}
+
+argHandler();
 

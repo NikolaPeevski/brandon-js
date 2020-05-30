@@ -40,13 +40,13 @@ export class Actions {
         // TODO: Hotswap brands by replacement
         return new Promise<any>((resolve, reject) => {
             this.checkBrand(brand).then(files => {
-                console.log(files);
-                console.log(config);
+                // console.log(files);
+                // console.log(config);
                 files.forEach((element: string) => {
                     this.copyBrandElements(brand, element);
                 });
-                let modBrand = Utils.capitalizeFirstLetter(brand.split('-').join(' '));
-                this.setHtmlTitle(modBrand);
+                // let modBrand = Utils.capitalizeFirstLetter(brand.split('-').join(' '));
+                // this.setHtmlTitle(modBrand);
                 resolve();
             }).catch(err => reject(err));
         });

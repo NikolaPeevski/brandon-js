@@ -2,9 +2,10 @@
   "name": "brandonjs",
   "version": "0.0.1",
   "description": "An ionic branding manager",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "bin": {
-    "brandon": "src/index.js"
+    "brandon": "lib/index.js"
   },
   "scripts": {
     "start": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
@@ -14,6 +15,7 @@
     "refresh": "rm -rf ./node_modules ./package-lock.json && npm install",
     "fiddle": "npm run build && node ./lib/index.js"
   },
+  "prepublish": "tsc",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NikolaPeevski/brandon-js.git"
