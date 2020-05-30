@@ -123,3 +123,5 @@ temp/
 
 ./package-lock.json
 ./test/brands
+./lib
+./test
